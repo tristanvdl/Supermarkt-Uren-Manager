@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jquery mob</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div data-role="page" id="home">
+        <div class="headerColor" data-role="header">
+            <h1>Bereken je loon</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <a href="#personalInfo" class="wageButton ui-btn ui-corner-all ui-icon-gear ui-btn-icon-left">Persoonlijke instellingen</a>
+        
+            <a href="#week1" class="wageButton ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-left">Vul je rooster in</a>
+           
+            <a href="#info" class="wageButton ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">Extra Informatie</a>
+            
+             <div class="endResult">Huidige werkgever:
+                <br> <span id="finalStore">Vul in</span></div>
+            <br>
+            <div class="endResult">Uren gewerkt:
+                <br> <span id="finalHours">0 uur</span></div>
+            <br>
+            <div class="endResult">Tot nu toe verdiend:
+                <br> <span id="finalWage">0 &euro;</span></div>
+            <form id="formRefresh" action="">
+                <input type="submit" value="refresh">
+            </form>
+        </div>
+    </div>
+    <div data-role="page" id="personalInfo">
+        <div class="headerColor" data-role="header">
+            <h1>Bereken je loon</h1>
+        </div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+            </ul>
+        </div>
+        <br>
+        <br>
+        <div data-role="main" class="ui-content">
+            <div data-role="controlgroup" data-type="vertical">
+                <a href="#storePopup" data-rel="popup" class="wageButton ui-btn">Waar werk je?</a>
+                <div data-position-to="window" class="ui-content popupBG" data-role="popup" id="storePopup">
+                    <form id="formStore" action="">
+                        Vul je winkel in
+                        <input id="storeInput" type="text">
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <center><span class="infoResult"><span id="resultStore">Vul in</span></center>
+                <br>
+                <a href="#wagePopup" data-rel="popup" class="wageButton ui-btn">Wat is je uurloon in euro's?</a>
+                <div data-position-to="window" class="ui-content popupBG" data-role="popup" id="wagePopup">
+                    <form id="formWage" action="">
+                        (Geen comma gebruiken, alleen punten. Dus bijv: 5.35)
+                        <input id="wageInput" type="text">
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <center><span class="infoResult"><span id="resultWage">0</span>&euro;</span>
+                </center>
+                <br>
+                <a href="#addPopup" data-rel="popup" class="wageButton ui-btn">Gaat er een toeslag overheen?</a>
+                <div data-position-to="window" class="ui-content popupBG" data-role="popup" id="addPopup">
+                    <form id="formAdd" action="">
+                        <p>Bijvoorbeeld een ADV toeslag</p>
+                        <input id="addInput" type="text">
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <center><span class="infoResult"><span id="resultAdd">0</span>%</span>
+                </center>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="week1">
+        <div class="headerColor" data-role="header">
+            <h1>Bereken je loon</h1>
+        </div>
+        <div class="headerColor" data-role="header">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#panelWeekOne">Week overzicht</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="panel" id="panelWeekOne" data-position="right">
+            <h2>Weken</h2>
+            <p><a href="#week1">Week 1</a></p>
+            <p><a href="#week2">Week 2</a></p>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div class="week">
+                <p>Week 1</p>
+            </div>
+            <table data-role="table" class="ui-responsive">
+                <thead>
+                    <tr>
+                        <th>Maandag</th>
+                        <th>Dinsdag</th>
+                        <th>Woensdag</th>
+                        <th>Donderdag</th>
+                        <th>Vrijdag</th>
+                        <th>Zaterdag</th>
+                        <th>Zondag</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span id="resultMW1">0</span>
+                            <span class="popupStyle"><a href="#MW1Popup" data-rel="popup" data-position-to="window" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="MW1Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formMW1">
+                                        <br>
+                                        <input id="inputMW1" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                        <td><span id="resultTW1">0</span>
+                            <span class="popupStyle"><a href="#TW1Popup" data-rel="popup" data-position-to="window" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="TW1Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formTW1">
+                                        <br>
+                                        <input id="inputTW1" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                        <td><span id="resultWW1">0</span>
+                            <span class="popupStyle"><a href="#WW1Popup" data-rel="popup" data-position-to="window" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="WW1Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formWW1">
+                                        <br>
+                                        <input id="inputWW1" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                        <td><span id="resultTUW1">0</span>
+                            <span class="popupStyle"><a href="#TUW1Popup" data-rel="popup" data-position-to="window" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="TUW1Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formTUW1">
+                                        <br>
+                                        <input id="inputTUW1" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                        <td><span id="resultFW1">0</span>
+                            <span class="popupStyle"><a href="#FW1Popup" data-rel="popup" data-position-to="window" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="FW1Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formFW1">
+                                        <br>
+                                        <input id="inputFW1" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                        <td><span id="resultSAW1">0</span>
+                            <span class="popupStyle"><a href="#SAW1Popup" data-rel="popup" data-position-to="window" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="SAW1Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formSAW1">
+                                        <br>
+                                        <input id="inputSAW1" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                        <td><span id="resultSUW1">0</span>
+                            <span class="popupStyle"><a href="#SUW1Popup" data-rel="popup" data-position-to="window"  class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="SUW1Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formSUW1">
+                                        <br>
+                                        <input id="inputSUW1" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div data-role="page" id="week2">
+        <div class="headerColor" data-role="header">
+            <h1>Bereken je loon</h1>
+        </div>
+        <div class="headerColor" data-role="header">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#panelWeekTwo">Week overzicht</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="panel" id="panelWeekTwo" data-position="right">
+            <h2>Weken</h2>
+            <p><a href="#week1">Week 1</a></p>
+            <p><a href="#week2">Week 2</a></p>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div class="week">
+                <p>Week 2</p>
+            </div>
+            <table data-role="table" class="ui-responsive">
+                <thead>
+                    <tr>
+                        <th>Maandag</th>
+                        <th>Dinsdag</th>
+                        <th>Woensdag</th>
+                        <th>Donderdag</th>
+                        <th>Vrijdag</th>
+                        <th>Zaterdag</th>
+                        <th>Zondag</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span id="resultMW2">0</span>
+                            <span class="popupStyle"><a href="#MW2Popup" data-rel="popup" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="MW2Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formMW2">
+                                        <br>
+                                        <input id="inputMW2" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                        <td><span id="resultTW2">0</span>
+                            <span class="popupStyle"><a href="#TW2Popup" data-rel="popup" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="TW2Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formTW2">
+                                        <br>
+                                        <input id="inputTW2" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                        <td><span id="resultWW2">0</span>
+                            <span class="popupStyle"><a href="#WW2Popup" data-rel="popup" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="WW2Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formWW2">
+                                        <br>
+                                        <input id="inputWW2" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                        <td><span id="resultTUW2">0</span>
+                            <span class="popupStyle"><a href="#TUW2Popup" data-rel="popup" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="TUW2Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formTUW2">
+                                        <br>
+                                        <input id="inputTUW2" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                        <td><span id="resultFW2">0</span>
+                            <span class="popupStyle"><a href="#FW2Popup" data-rel="popup" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="FW2Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formFW2">
+                                        <br>
+                                        <input id="inputFW2" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                        <td><span id="resultSAW2">0</span>
+                            <span class="popupStyle"><a href="#SAW2Popup" data-rel="popup" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="SAW2Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formSAW2">
+                                        <br>
+                                        <input id="inputSAW2" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                        <td><span id="resultSUW2">0</span>
+                            <span class="popupStyle"><a href="#SUW2Popup" data-rel="popup" data-position-to="window" class="" data-transition="pop">Bewerk</a></span>
+                            <div data-role="popup" id="SUW2Popup" class="ui-content popupBG">
+                                <p>
+                                    <form id="formSUW2">
+                                        <br>
+                                        <input id="inputSUW2" type="text">
+                                        <input type="submit" value="Submit">
+                                    </form>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="logic.js"></script>
+    <script type="text/javascript" src="roster.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>

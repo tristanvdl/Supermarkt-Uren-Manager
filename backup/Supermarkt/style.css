@@ -1,0 +1,76 @@
+/* OVERAL STYLE */
+
+#home,
+#personalInfo,
+#week1,
+#week2,
+.ui-content,
+.ui-panel-wrapper {
+    background-color: #2CDDA5!important;
+    text-shadow: none!important;
+}
+
+.popupBG {
+    background-color: white!important;
+}
+
+.headerColor {
+    background-color: #25B2BC!important;
+    text-shadow: none!important;
+}
+
+.week {
+    font-size: 26px;
+    text-align: center;
+}
+
+td {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+tr {
+    text-align: center;
+}
+
+.popupStyle,
+.popupStyle a {
+    text-decoration: none;
+    float: right;
+}
+
+
+/* PERSONAL INFORMATION PAGE */
+
+.infoResult {
+    text-align: center;
+    font-weight: bold;
+    
+
+    font-size: 25px;
+}
+
+.wageButton {
+    font-size: 20px
+}
+
+.infoText {
+    font-weight: bold;
+}
+
+.endResult {
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+#finalWage {
+    font-size: 25px;
+}
+
+#finalHours {
+    font-size: 25px;
+}
+
+#finalStore {
+    font-size: 25px;
+}

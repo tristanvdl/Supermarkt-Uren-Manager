@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Jquery mob</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div data-role="page" id="home">
+    <div class="headerColor" data-role="header">
+      <h1>Bereken je loon</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+      <a href="#personalInfo" class="wageButton ui-btn ui-corner-all ui-icon-gear ui-btn-icon-left">Persoonlijke instellingen</a>
+      <a href="#week1" class="wageButton ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-left">Vul je rooster in</a>
+      <a href="#info" class="wageButton ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">Extra Informatie</a>
+      <div class="endResult">Huidige werkgever:
+        <br> <span id="finalStore">Vul in</span></div>
+      <br>
+      <div class="endResult">Uren gewerkt:
+        <br> <span id="finalHours">0 uur</span></div>
+      <br>
+      <div class="endResult">Tot nu toe verdiend:
+        <br> <span id="finalWage">0 &euro;</span></div>
+      <form id="formRefresh" action="">
+        <input type="submit" value="refresh">
+      </form>
+    </div>
+  </div>
+  <div data-role="page" id="personalInfo">
+    <div class="headerColor" data-role="header">
+      <h1>Bereken je loon</h1>
+    </div>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+      </ul>
+    </div>
+    <br>
+    <br>
+    <div data-role="main" class="ui-content">
+      <div data-role="controlgroup" data-type="vertical">
+        <a href="#storePopup" data-rel="popup" class="wageButton ui-btn">Waar werk je?</a>
+        <div data-position-to="window" class="ui-content popupBG" data-role="popup" id="storePopup">
+          <form id="formStore" action="">
+            Vul je winkel in
+            <input id="storeInput" type="text">
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+        <center><span class="infoResult"><span id="resultStore">Vul in</span></center>
+        <br>
+        <a href="#wagePopup" data-rel="popup" class="wageButton ui-btn">Wat is je uurloon in euro's?</a>
+        <div data-position-to="window" class="ui-content popupBG" data-role="popup" id="wagePopup">
+          <form id="formWage" action="">
+            (Geen comma gebruiken, alleen punten. Dus bijv: 5.35)
+            <input id="wageInput" type="text">
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+        <center><span class="infoResult"><span id="resultWage">0</span>&euro;</span>
+        </center>
+        <br>
+        <a href="#addPopup" data-rel="popup" class="wageButton ui-btn">Gaat er een toeslag overheen?</a>
+        <div data-position-to="window" class="ui-content popupBG" data-role="popup" id="addPopup">
+          <form id="formAdd" action="">
+            <p>Bijvoorbeeld een ADV toeslag</p>
+            <input id="addInput" type="text">
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+        <center><span class="infoResult"><span id="resultAdd">0</span>%</span>
+        </center>
+      </div>
+    </div>
+  </div>
+  <div data-role="page" id="week1">
+    <div class="headerColor" data-role="header">
+      <h1>Bereken je loon</h1>
+    </div>
+    <div class="headerColor" data-role="header">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#panelWeekOne">Week overzicht</a></li>
+        </ul>
+      </div>
+    </div>
+    <div data-role="panel" id="panelWeekOne" data-position="right">
+      <h2>Weken</h2>
+      <p><a href="#week1">Week 1</a></p>
+      <p><a href="#week2">Week 2</a></p>
+      <p><a href="#week3">Week 3</a></p>
+      <p><a href="#week4">Week 4</a></p>
+    </div>
+    <div data-role="main" class="ui-content">
+      <div class="week">
+        <p>Week 1</p>
+      </div>
+      <table data-role="table" class="ui-responsive">
+        <thead>
+          <tr>
+            <th>Maandag</th>
+            <th>Dinsdag</th>
+            <th>Woensdag</th>
+            <th>Donderdag</th>
+            <th>Vrijdag</th>
+            <th>Zaterdag</th>
+            <th>Zondag</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="week1Cont">
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div data-role="page" id="week2">
+    <div class="headerColor" data-role="header">
+      <h1>Bereken je loon</h1>
+    </div>
+    <div class="headerColor" data-role="header">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#panelWeekTwo">Week overzicht</a></li>
+        </ul>
+      </div>
+    </div>
+    <div data-role="panel" id="panelWeekTwo" data-position="right">
+      <h2>Weken</h2>
+      <p><a href="#week1">Week 1</a></p>
+      <p><a href="#week2">Week 2</a></p>
+      <p><a href="#week1">Week 3</a></p>
+      <p><a href="#week2">Week 4</a></p>
+    </div>
+    <div data-role="main" class="ui-content">
+      <div class="week">
+        <p>Week 2</p>
+      </div>
+      <table data-role="table" class="ui-responsive">
+        <thead>
+          <tr>
+            <th>Maandag</th>
+            <th>Dinsdag</th>
+            <th>Woensdag</th>
+            <th>Donderdag</th>
+            <th>Vrijdag</th>
+            <th>Zaterdag</th>
+            <th>Zondag</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="week2Cont">
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div data-role="page" id="week3">
+    <div class="headerColor" data-role="header">
+      <h1>Bereken je loon</h1>
+    </div>
+    <div class="headerColor" data-role="header">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#panelWeekThree">Week overzicht</a></li>
+        </ul>
+      </div>
+    </div>
+    <div data-role="panel" id="panelWeekThree" data-position="right">
+      <h2>Weken</h2>
+      <p><a href="#week1">Week 1</a></p>
+      <p><a href="#week2">Week 2</a></p>
+      <p><a href="#week3">Week 3</a></p>
+      <p><a href="#week4">Week 4</a></p>
+    </div>
+    <div data-role="main" class="ui-content">
+      <div class="week">
+        <p>Week 3</p>
+      </div>
+      <table data-role="table" class="ui-responsive">
+        <thead>
+          <tr>
+            <th>Maandag</th>
+            <th>Dinsdag</th>
+            <th>Woensdag</th>
+            <th>Donderdag</th>
+            <th>Vrijdag</th>
+            <th>Zaterdag</th>
+            <th>Zondag</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="week3Cont">
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div data-role="page" id="week4">
+    <div class="headerColor" data-role="header">
+      <h1>Bereken je loon</h1>
+    </div>
+    <div class="headerColor" data-role="header">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#panelWeekFour">Week overzicht</a></li>
+        </ul>
+      </div>
+    </div>
+    <div data-role="panel" id="panelWeekFour" data-position="right">
+      <h2>Weken</h2>
+      <p><a href="#week1">Week 1</a></p>
+      <p><a href="#week2">Week 2</a></p>
+      <p><a href="#week3">Week 3</a></p>
+      <p><a href="#week4">Week 4</a></p>
+    </div>
+    <div data-role="main" class="ui-content">
+      <div class="week">
+        <p>Week 4</p>
+      </div>
+      <table data-role="table" class="ui-responsive">
+        <thead>
+          <tr>
+            <th>Maandag</th>
+            <th>Dinsdag</th>
+            <th>Woensdag</th>
+            <th>Donderdag</th>
+            <th>Vrijdag</th>
+            <th>Zaterdag</th>
+            <th>Zondag</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="week4Cont">
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script type="text/javascript" src="app/logic/getWage.js"></script>
+  <script type="text/javascript" src="app/logic/createWeek.js"></script>
+  <script type="text/javascript" src="app/logic/setHour.js"></script>
+  <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+</html>
